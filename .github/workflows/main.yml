@@ -5,31 +5,22 @@ on:
     branches:
       - master
 
-# on:
-# 	schedule:
-# 		- cron:  '0 1 * * *'
-
 jobs:
   audit:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-		steps:
-		- uses: actions/checkout@v2
-
-		- name: Setup node 12
-			uses: actions/setup-node@v1
-			with:
-				node-version: 12.x
-			env:
-				LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
-				GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
-				GIST_ID: ${{ secrets.GIST_ID }}
-
-		- uses: actions/cache@v1
-			with:
-				path: ~/.npm
-				key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-				restore-keys: |
-					${{ runner.os }}-node-
-
-		- run: npm run job:webtest
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+        env:
+          LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+      - name: Run job
+        run: |
+          npm install
+          npm run job:webtest
