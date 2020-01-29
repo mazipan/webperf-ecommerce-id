@@ -61,10 +61,7 @@ export const updateGist = async (name: string, device: string, response: any) =>
 		console.log('> [GIST] - updating value...\n');
 		await octokit.gists.update({
 			gist_id: process.env.GIST_ID,
-			files: {
-				filename: FILENAME,
-				content: { ...objectData, ...{ [todayDate]: newData } }
-			}
+			'files.content': { ...objectData, ...{ [todayDate]: newData } }
 		})
 
 	} catch (e) {
