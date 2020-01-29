@@ -12,11 +12,11 @@ export const updateGist = async (name: string, device: string, response: any) =>
 	});
 
 	if (lastData) {
-		console.log('> [GIST] - get existing data...', lastData.data.files['webperf-ecommerce-id.json']);
+		console.log('> [GIST] - get existing data...', lastData.data.files['webperf-ecommerce-id.json'].content);
 	}
 
 	try {
-		const objectData = JSON.parse(lastData.data.files['webperf-ecommerce-id.json']);
+		const objectData = JSON.parse(lastData.data.files['webperf-ecommerce-id.json'].content);
 		let newData = objectData[todayDate];
 
 		if (!newData) {
