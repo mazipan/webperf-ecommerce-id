@@ -15,3 +15,7 @@ Web Perf Comparison for E-Commerce in Indonesia
 |Blanja      |  https://www.blanja.com/    |  https://m.blanja.com/               |
 
 See details in file [src/server/ecommerce.ts](https://github.com/mazipan/webperf-ecommerce-id/blob/master/src/server/ecommerce.ts)
+
+## Schedule
+
+Once a week
