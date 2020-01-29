@@ -65,7 +65,7 @@ export const updateGist = async (name: string, device: string, response: any) =>
 			gist_id: process.env.GIST_ID,
 			files: {
 				[FILENAME]: {
-					content: newValue,
+					content: JSON.stringify(newValue),
 					filename: FILENAME
 				},
 			}
