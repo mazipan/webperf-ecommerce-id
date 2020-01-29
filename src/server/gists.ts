@@ -12,7 +12,7 @@ export const updateGist = async (name: string, device: string, response: any) =>
 	});
 
 	if (lastData) {
-		console.log('> [GIST] - get existing data...');
+		console.log('> [GIST] - get existing data...', lastData);
 	}
 
 	try {
