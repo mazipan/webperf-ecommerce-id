@@ -25,4 +25,12 @@ jobs:
 				LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
 				GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
 				GIST_ID: ${{ secrets.GIST_ID }}
+
+		- uses: actions/cache@v1
+			with:
+				path: ~/.npm
+				key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+				restore-keys: |
+					${{ runner.os }}-node-
+
 		- run: npm run job:webtest
