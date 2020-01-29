@@ -1,0 +1,28 @@
+name: Audit web perf
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+			- releases/*
+
+# on:
+# 	schedule:
+# 		- cron:  '0 1 * * *'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+		steps:
+		- uses: actions/checkout@v2
+
+		- name: Setup node 12
+			uses: actions/setup-node@v1
+			with:
+				node-version: 12.x
+			env:
+				LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
+				GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+				GIST_ID: ${{ secrets.GIST_ID }}
+		- run: npm run job:webtest

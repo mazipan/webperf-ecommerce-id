@@ -1,0 +1,31 @@
+{
+  "name": "webperf-ecommerce-id",
+  "version": "1.0.0",
+  "description": "Web Perf Comparison for E-Commerce in Indonesia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "job:webtest": "ts-node ./src/server/job.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazipan/webperf-ecommerce-id.git"
+  },
+  "author": "Irfan Maulana <github.com/mazipan>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mazipan/webperf-ecommerce-id/issues"
+  },
+  "homepage": "https://github.com/mazipan/webperf-ecommerce-id#readme",
+  "dependencies": {
+    "@octokit/rest": "^16.40.1",
+    "node-fetch": "^2.6.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+	},
+	"devDependencies": {
+		"@types/node-fetch": "2.5.4",
+    "chalk": "^3.0.0",
+    "ts-node-dev": "^1.0.0-pre.44"
+	}
+}
