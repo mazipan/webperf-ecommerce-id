@@ -13,7 +13,8 @@ export const updateGist = async (name: string, device: string, response: any) =>
 
 	const FILENAME = process.env.GIST_FILENAME || '';
 	if (lastData) {
-		console.log('> [GIST] - get existing data...');
+		console.log(`> [GIST] - get existing data from ${FILENAME}...\n`);
+		console.log(lastData);
 	}
 
 	try {
