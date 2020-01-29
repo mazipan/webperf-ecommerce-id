@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import data from './ecommerce';
 import { updateGist } from './gists';
+import { EcommerceItem } from '../index';
 
 const run = async (name: string, url: string, device: string): Promise<any | null> => {
   const URL = `https://builder-dot-lighthouse-ci.appspot.com/ci`;
@@ -55,7 +56,7 @@ const run = async (name: string, url: string, device: string): Promise<any | nul
 }
 
 const readData = () => {
-	data.map((item :EcommereItem, idx: number) => {
+	data.map((item :EcommerceItem, idx: number) => {
 		setTimeout(() => {
 			run(item.name, item.urlMobile, 'mobile');
 

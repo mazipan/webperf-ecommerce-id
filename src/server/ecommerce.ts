@@ -1,4 +1,6 @@
-export default [
+import { EcommerceItem } from '../index';
+
+const data: EcommerceItem[] = [
 	{
 		name: 'Tokopedia',
 		urlDesktop: 'https://www.tokopedia.com/',
@@ -42,3 +44,5 @@ export default [
     logo: 'https://s2.blanja.com/static/public/prime/img/common/logo@1x.png',
   },
 ]
+
+export default data;
