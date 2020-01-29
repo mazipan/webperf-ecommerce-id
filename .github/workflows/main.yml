@@ -1,11 +1,9 @@
 name: Audit web perf
 
 on:
-  pull_request:
   push:
     branches:
       - master
-			- releases/*
 
 # on:
 # 	schedule:
@@ -14,6 +12,7 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
+
 		steps:
 		- uses: actions/checkout@v2
 
