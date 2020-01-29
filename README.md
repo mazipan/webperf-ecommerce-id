@@ -19,3 +19,7 @@ See details in file [src/server/ecommerce.ts](https://github.com/mazipan/webperf
 ## Schedule
 
 Once a week
+
+## Engine
+
+Using [API for Lighthouse Bot](https://github.com/GoogleChromeLabs/lighthousebot#ci-backend-builder)
