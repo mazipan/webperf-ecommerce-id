@@ -10,15 +10,16 @@ export const updateGist = async (name: string, device: string, response: any) =>
 	const lastData = await octokit.gists.get({
 		gist_id: process.env.GIST_ID,
 	});
+	const FILENAME = 'webperf-ecommerce-id.json';
 
 	if (lastData) {
-		console.log(`> [GIST] - get existing data...\n`);
+		console.log(`> [GIST] - get existing data from ${FILENAME}...\n`);
 		console.log(lastData);
 	}
 
 	try {
 		// @ts-ignore
-		const objectData = JSON.parse(lastData.data.files[process.env.GIST_FILENAME].content);
+		const objectData = JSON.parse(lastData.data.files[FILENAME].content);
 		let newData = objectData[todayDate];
 
 		if (!newData) {
@@ -57,11 +58,11 @@ export const updateGist = async (name: string, device: string, response: any) =>
 			}
 		}
 
-		console.log('> [GIST] - updating value...');
+		console.log('> [GIST] - updating value...\n');
 		await octokit.gists.update({
 			gist_id: process.env.GIST_ID,
 			files: {
-				filename: process.env.GIST_FILENAME,
+				filename: FILENAME,
 				content: { ...objectData, ...{ [todayDate]: newData } }
 			}
 		})
