@@ -31,7 +31,8 @@ jobs:
         run: npm install
 
       - name: Run web perf test job
-        run: npm run job:webtest
+        # run: npm run job:webtest
+        run: npm run test:gist
         env:
           LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
