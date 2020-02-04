@@ -29,3 +29,11 @@ Running Lighthouse 5 times then get the 75 percentile value
 ## Engine
 
 Using [API for Lighthouse Bot](https://github.com/GoogleChromeLabs/lighthousebot#ci-backend-builder)
+
+## Result
+
+On this [gist](https://gist.github.com/mazipan/feebc7a0662d2450317b0926c1fbd918)
+
+-----
+
+Copyright © 2020 by Irfan Maulana
