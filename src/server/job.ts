@@ -1,3 +1,5 @@
+import Table from 'cli-table';
+
 import data from './ecommerce';
 import runLH from './lh';
 import { updateGist } from './gists';
@@ -8,13 +10,17 @@ const NUMBER_OF_RUN = 5;
 
 const run = async (name: string, url: string, device: string): Promise<any | null> => {
 	let results: any[] = [];
+	const tableLog = new Table();
+
 	for(let i = 0; i < NUMBER_OF_RUN; i++) {
 		const response = await runLH(name, url, device);
 		if (response) {
 			results.push(response);
+			tableLog.push(response);
 		}
 	}
 
+	console.log(tableLog.toString());
 	const report = quantile(results, 0.75, 'perf')
 	updateGist(name, device, report);
 }
