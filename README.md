@@ -2,6 +2,8 @@
 
 Web Perf Comparison for E-Commerce in Indonesia
 
+![Audit web perf](https://github.com/mazipan/webperf-ecommerce-id/workflows/Audit%20web%20perf/badge.svg)
+
 ## List of E-commerce tested
 
 | Name       | Desktop URL                 | Mobile URL                           |
