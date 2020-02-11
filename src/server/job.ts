@@ -52,13 +52,6 @@ const readData = () => {
 		console.error(`> env GIST_ID not found`);
 	}
 
-	if (process.env.GIT_TOKEN) {
-		console.log(`> Found env GIT_TOKEN`);
-	} else {
-		isSecretNotFound = true;
-		console.error(`> env GIT_TOKEN not found`);
-	}
-
 	if (!isSecretNotFound) {
 		data.map(async (item: EcommerceItem) => {
 			await run(item.name, item.urlMobile, 'mobile');
