@@ -11,7 +11,7 @@ const NUMBER_OF_RUN = 5;
 const run = async (name: string, url: string, device: string): Promise<any | null> => {
 	let results: any[] = [];
 	const tableLog = new Table({
-		head: ['Perf', 'PWA', 'TTFB', 'FCP', 'TTI']
+		head: ['Perf', 'TTFB', 'FCP', 'TTI']
 	});
 
 	for(let i = 0; i < NUMBER_OF_RUN; i++) {
@@ -19,12 +19,14 @@ const run = async (name: string, url: string, device: string): Promise<any | nul
 		if (response) {
 			results.push(response);
 			// @ts-ignore
-			tableLog.push([response.perf, response.pwa,response.ttfb, response.fcp, response.tti]);
+			tableLog.push([response.perf, response.ttfb, response.fcp, response.tti]);
 		}
 	}
 
 	console.log(`\nPerformance Result for ${name} - ${device}`);
 	console.log(tableLog.toString());
+	console.log(`\n`);
+
 	const report = median(results, 'perf');
 	updateGist(name, device, report);
 }

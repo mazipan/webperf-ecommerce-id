@@ -1,4 +1,6 @@
 import fs from 'fs';
+import path from 'path';
+import appRootDir from 'app-root-dir';
 
 export const writeFile = (filename, content) => {
 	return new Promise(function (resolve, reject) {
@@ -7,4 +9,9 @@ export const writeFile = (filename, content) => {
 			else resolve(content);
 		});
 	});
+}
+
+export const writeNewReport = (content: any) => {
+	const reportFileDir = path.join(path.resolve(appRootDir.get()), `/reports/output.json`);
+	writeFile(reportFileDir, JSON.stringify(content));
 }
