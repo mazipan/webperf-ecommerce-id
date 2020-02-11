@@ -24,7 +24,7 @@ Once a week
 
 ## Percentile
 
-Running Lighthouse 5 times then get the 75 percentile value
+Running Lighthouse 5 times then get the median value
 
 ## Engine
 

@@ -4,7 +4,7 @@ import data from './ecommerce';
 import runLH from './lh';
 import { updateGist } from './gists';
 import { EcommerceItem } from './types';
-import { quantile } from './utils';
+import { median } from './utils';
 
 const NUMBER_OF_RUN = 5;
 
@@ -21,7 +21,7 @@ const run = async (name: string, url: string, device: string): Promise<any | nul
 	}
 
 	console.log(tableLog.toString());
-	const report = quantile(results, 0.75, 'perf')
+	const report = median(results, 'perf');
 	updateGist(name, device, report);
 }
 
