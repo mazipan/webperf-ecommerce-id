@@ -1,4 +1,4 @@
-import Table from 'cli-table';
+import Table from 'cli-table3';
 
 import data from './ecommerce';
 import runLH from './lh';
@@ -10,18 +10,23 @@ const NUMBER_OF_RUN = 5;
 
 const run = async (name: string, url: string, device: string): Promise<any | null> => {
 	let results: any[] = [];
-	const tableLog = new Table();
+	const tableLog = new Table({
+			head: ['Perf', 'FCP', 'TTI', 'Count', 'Size']
+	});
 
 	for(let i = 0; i < NUMBER_OF_RUN; i++) {
 		const response = await runLH(name, url, device);
 		if (response) {
 			results.push(response);
-			tableLog.push(response);
+			// @ts-ignore
+			tableLog.push([response.perf, response.fcp, response.tti, response.reqCount, response.reqSize]);
 		}
 	}
 
+	console.log(`Performance Result for ${name} - ${device}`);
 	console.log(tableLog.toString());
 	const report = median(results, 'perf');
+	console.log(`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^`);
 	updateGist(name, device, report);
 }
 
