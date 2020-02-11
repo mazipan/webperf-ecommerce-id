@@ -11,22 +11,21 @@ const NUMBER_OF_RUN = 5;
 const run = async (name: string, url: string, device: string): Promise<any | null> => {
 	let results: any[] = [];
 	const tableLog = new Table({
-			head: ['Perf', 'FCP', 'TTI', 'Count', 'Size']
+		head: ['Perf', 'PWA', 'TTFB', 'FCP', 'TTI']
 	});
 
 	for(let i = 0; i < NUMBER_OF_RUN; i++) {
-		const response = await runLH(name, url, device);
+		const response = await runLH(name, url, device, i+1);
 		if (response) {
 			results.push(response);
 			// @ts-ignore
-			tableLog.push([response.perf, response.fcp, response.tti, response.reqCount, response.reqSize]);
+			tableLog.push([response.perf, response.pwa,response.ttfb, response.fcp, response.tti]);
 		}
 	}
 
-	console.log(`Performance Result for ${name} - ${device}`);
+	console.log(`\nPerformance Result for ${name} - ${device}`);
 	console.log(tableLog.toString());
 	const report = median(results, 'perf');
-	console.log(`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^`);
 	updateGist(name, device, report);
 }
 
@@ -51,6 +50,13 @@ const readData = () => {
 	} else {
 		isSecretNotFound = true;
 		console.error(`> env GIST_ID not found`);
+	}
+
+	if (process.env.GIT_TOKEN) {
+		console.log(`> Found env GIT_TOKEN`);
+	} else {
+		isSecretNotFound = true;
+		console.error(`> env GIT_TOKEN not found`);
 	}
 
 	if (!isSecretNotFound) {

@@ -1,7 +1,10 @@
 import fetch from 'node-fetch';
+import path from 'path';
+import appRootDir from 'app-root-dir'
 import { LHResponse } from './types';
+import { writeFile } from './file';
 
-export default async (name: string, url: string, device: string): Promise<LHResponse | null> => {
+export default async (name: string, url: string, device: string, index: number): Promise<LHResponse | null> => {
 	const URL = `https://builder-dot-lighthouse-ci.appspot.com/ci`;
 
 	try {
@@ -23,22 +26,21 @@ export default async (name: string, url: string, device: string): Promise<LHResp
 		const result = await resp.json();
 
 		if (result) {
+			const reportFileDir = path.join(path.resolve(appRootDir.get()), `/reports/${new Date().toISOString().substring(0, 10)}-${name.toLowerCase()}-${device.toLowerCase()}-${index}.json`);
+			writeFile(reportFileDir, JSON.stringify(result));
+
 			const categories = result?.categories || null;
 			const audits = result?.audits || null;
-			const resourceItems = audits?.['resource-summary']?.details?.items || [];
 
 			const response: LHResponse = {
 				perf: categories?.performance?.score || 0,
 				aiiy: categories?.accessibility?.score || 0,
 				pwa: categories?.pwa?.score || 0,
 
-				fcp: audits['first-contentful-paint']?.numericValue || 0,
-				ttfb: audits['time-to-first-byte']?.numericValue || 0,
-				tti: audits['interactive']?.numericValue || 0,
-				si: audits['speed-index']?.numericValue || 0,
-
-				reqCount: resourceItems?.[0]?.requestCount || 0,
-				reqSize: resourceItems?.[0]?.size || 0,
+				fcp: audits['first-contentful-paint']?.rawValue || 0,
+				ttfb: audits['time-to-first-byte']?.rawValue || 0,
+				tti: audits['interactive']?.rawValue || 0,
+				si: audits['speed-index']?.rawValue || 0,
 				name,
 				device,
 			}

@@ -15,8 +15,6 @@ export interface LHResponse {
 	tti: number;
 	si: number;
 
-	reqCount: number;
-	reqSize: number;
 	name: string;
 	device: string;
 }

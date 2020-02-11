@@ -41,3 +41,16 @@ jobs:
           LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
+
+			- name: Commit files report
+				run: |
+					git config --local user.email "action@github.com"
+					git config --local user.name "GitHub Action"
+					git commit -m "Generate new report" -a
+
+			- name: GitHub Push
+  			uses: ad-m/github-push-action@v0.5.0
+				with:
+					directory: ./reports
+					github_token: ${{ secrets.GIT_TOKEN }}
+
