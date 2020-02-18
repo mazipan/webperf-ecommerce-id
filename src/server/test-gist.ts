@@ -1,5 +1,5 @@
 import { updateGist } from './gists';
 
 (() => {
-	updateGist('test', 'mobile', { perf: 0});
+  updateGist('test', 'mobile', { perf: 0 });
 })();

@@ -6,14 +6,14 @@ export interface EcommerceItem {
 }
 
 export interface LHResponse {
-	perf: number;
-	aiiy: number;
+  perf: number;
+  aiiy: number;
 
-	fcp: number;
-	ttfb: number;
-	tti: number;
-	si: number;
+  fcp: number;
+  ttfb: number;
+  tti: number;
+  si: number;
 
-	name: string;
-	device: string;
+  name: string;
+  device: string;
 }

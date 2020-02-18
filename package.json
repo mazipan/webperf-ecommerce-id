@@ -4,6 +4,7 @@
   "description": "Web Perf Comparison for E-Commerce in Indonesia",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./src --ext .ts -c .eslintrc.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:gist": "ts-node ./src/server/test-gist.ts",
     "test:lh": "ts-node ./src/server/test-lh.ts",
@@ -28,8 +29,31 @@
   },
   "devDependencies": {
     "@types/node-fetch": "2.5.4",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
     "chalk": "3.0.0",
     "cli-table3": "0.5.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "ts-node-dev": "1.0.0-pre.44"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint --fix",
+      "git add"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --config .prettierrc.js --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
