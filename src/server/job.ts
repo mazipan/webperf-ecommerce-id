@@ -15,7 +15,7 @@ const run = async (name: string, url: string, device: string): Promise<any | nul
 	});
 
 	for(let i = 0; i < NUMBER_OF_RUN; i++) {
-		const response = await runLH(name, url, device, i+1);
+		const response = await runLH(name, url, device);
 		if (response) {
 			results.push(response);
 			// @ts-ignore

@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import { LHResponse } from './types';
 
-export default async (name: string, url: string, device: string, index: number): Promise<LHResponse | null> => {
+export default async (name: string, url: string, device: string): Promise<LHResponse | null> => {
 	const URL = `https://builder-dot-lighthouse-ci.appspot.com/ci`;
 
 	try {
