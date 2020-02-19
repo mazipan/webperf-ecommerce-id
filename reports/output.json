@@ -1,1 +1,149 @@
-{}
+{
+  "2020-02-19": [
+    {
+      "n": "tokopedia",
+      "mobile": {
+        "d": {
+          "perf": 1,
+          "aiiy": 0,
+          "fcp": 757.513,
+          "ttfb": 17.84899999999999,
+          "tti": 757.513,
+          "si": 757.513,
+          "name": "Tokopedia",
+          "device": "mobile"
+        }
+      },
+      "desktop": {
+        "d": {
+          "perf": 1,
+          "aiiy": 0,
+          "fcp": 756.133,
+          "ttfb": 16.402000000000015,
+          "tti": 756.133,
+          "si": 756.133,
+          "name": "Tokopedia",
+          "device": "desktop"
+        }
+      }
+    },
+    {
+      "n": "lazada",
+      "mobile": { "d": null },
+      "desktop": {
+        "d": {
+          "perf": 0.64,
+          "aiiy": 1,
+          "fcp": 3994.892,
+          "ttfb": 225.65999999999997,
+          "tti": 4274.246499999999,
+          "si": 6221.118888977271,
+          "name": "Lazada",
+          "device": "desktop"
+        }
+      }
+    },
+    {
+      "n": "blibli",
+      "mobile": {
+        "d": {
+          "perf": 0.95,
+          "aiiy": 0.91,
+          "fcp": 1412.9300000000003,
+          "ttfb": 326.749,
+          "tti": 3521.2920000000004,
+          "si": 2847.447023919168,
+          "name": "Blibli",
+          "device": "mobile"
+        }
+      },
+      "desktop": { "d": null }
+    },
+    {
+      "n": "shopee",
+      "mobile": {
+        "d": {
+          "perf": 0.19,
+          "aiiy": 0.71,
+          "fcp": 3618.4859999999994,
+          "ttfb": 405.85,
+          "tti": 16313.004,
+          "si": 10292.787505969432,
+          "name": "Shopee",
+          "device": "mobile"
+        }
+      },
+      "desktop": { "d": null }
+    },
+    {
+      "n": "blanja",
+      "mobile": {
+        "d": {
+          "perf": 0.05,
+          "aiiy": 0.49,
+          "fcp": 5835.411,
+          "ttfb": 323.35299999999995,
+          "tti": 32404.113000000005,
+          "si": 18010.492335947547,
+          "name": "Blanja",
+          "device": "mobile"
+        }
+      },
+      "desktop": {
+        "d": {
+          "perf": 0.03,
+          "aiiy": 0.49,
+          "fcp": 7113.644499999999,
+          "ttfb": 319.86100000000005,
+          "tti": 28667.4675,
+          "si": 19467.894512837756,
+          "name": "Blanja",
+          "device": "desktop"
+        }
+      }
+    },
+    {
+      "n": "bukalapak",
+      "mobile": {
+        "d": {
+          "perf": 0.3,
+          "aiiy": 0.92,
+          "fcp": 2935.209,
+          "ttfb": 422.693,
+          "tti": 14142.399499999996,
+          "si": 8497.560813577184,
+          "name": "Bukalapak",
+          "device": "mobile"
+        }
+      },
+      "desktop": {
+        "d": {
+          "perf": 0.23,
+          "aiiy": 0.92,
+          "fcp": 3728.991,
+          "ttfb": 436.758,
+          "tti": 14944.212326965335,
+          "si": 9199.716158375433,
+          "name": "Bukalapak",
+          "device": "desktop"
+        }
+      }
+    },
+    {
+      "n": "jd",
+      "mobile": { "d": null },
+      "desktop": {
+        "d": {
+          "perf": 0.29,
+          "aiiy": 0.5,
+          "fcp": 2827.0634999999993,
+          "ttfb": 243.567,
+          "tti": 13034.213500000002,
+          "si": 8947.119553473414,
+          "name": "JD",
+          "device": "desktop"
+        }
+      }
+    }
+  ]
+}
