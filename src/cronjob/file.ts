@@ -13,7 +13,7 @@ export const getFileByNameAndDevice = (name: string, device: string, index: numb
 
 export const writeFile = (filename, content): Promise<any> => {
   return new Promise(function(resolve, reject) {
-    fs.writeFile(filename, content, 'utf-8', function(err) {
+    fs.writeFile(filename, JSON.stringify(content), 'utf-8', function(err) {
       if (err) reject(err);
       else resolve(content);
     });
@@ -21,7 +21,7 @@ export const writeFile = (filename, content): Promise<any> => {
 };
 
 export const writeNewReport = (content: any): void => {
-  writeFile(REPORT_FILE, JSON.stringify(content));
+  writeFile(REPORT_FILE, (content));
 };
 
 export const readFileReport = (onSuccess): void => {

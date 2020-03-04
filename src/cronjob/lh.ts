@@ -39,7 +39,6 @@ export default async (name: string, url: string, device: string, index: number):
         device,
       };
 
-      console.log(`> Finish run job for ${url}: perf: ${response.perf}`);
       return response;
     }
   } catch (e) {

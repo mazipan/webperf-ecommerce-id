@@ -38,20 +38,5 @@
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "ts-node-dev": "1.0.0-pre.44"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "yarn lint --fix",
-      "git add"
-    ],
-    "*.{json,md,yml}": [
-      "prettier --config .prettierrc.js --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
