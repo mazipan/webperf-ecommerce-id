@@ -1,13 +1,11 @@
 name: Audit web perf
 
-#on:
-#  push:
-#    branches:
-#      - master
-
 on:
+  push:
+    branches: 
+      - master
   schedule:
-  - cron: "0 14 * * 3"
+  - cron: "0 12 * * 3"
 
 jobs:
   run_audit:
