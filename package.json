@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src --ext .ts -c .eslintrc.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:gist": "ts-node ./src/server/test-gist.ts",
-    "test:lh": "ts-node ./src/server/test-lh.ts",
-    "job:webtest": "ts-node ./src/server/job.ts"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "job:webtest": "ts-node ./src/cronjob/job.ts"
   },
   "repository": {
     "type": "git",
