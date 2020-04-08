@@ -2,8 +2,7 @@ name: Audit web perf
 
 on:
   push:
-    branches:
-      - master
+    branches: master
   schedule:
     - cron: '0 12 * * 3'
 
@@ -27,27 +26,41 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
-
       - name: Install dependencies
         run: npm install
 
-      - name: Run web perf test job
-        run: npm run job:webtest
-        env:
-          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
-          LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
-          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
-          GIST_ID: ${{ secrets.GIST_ID }}
+      #- name: Run web perf test job
+      #  run: npm run job:webtest
+      #  env:
+      #    PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
+      #    LIGHTHOUSE_API_KEY: ${{ secrets.LIGHTHOUSE_API_KEY }}
+      #    GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+      #    GIST_ID: ${{ secrets.GIST_ID }}
 
+      - name: Prepare files for reporting
+        run: |
+          cat > reports/LAST_UPDATED
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          echo $d > reports/LAST_UPDATED
+          echo "Deleting unused files..."
+          rm -rf src
+          rm -rf .github
+          rm .eslintrc.js
+          rm .prettierrc.js
+          rm package-lock.json
+          rm package.json
+          rm tsconfig.json
+          rm yarn.lock
       - name: Commit files report
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "New generated report"
-
+          git commit -m "👋 Generated report"
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.5.0
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
           directory: ./reports
+          force: true
+          branch: report
