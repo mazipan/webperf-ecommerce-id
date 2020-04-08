@@ -22,9 +22,9 @@ See details in file [src/server/ecommerce.ts](https://github.com/mazipan/webperf
 
 Once a week
 
-## Percentile
+## Quantile
 
-Running Lighthouse 5 times then get from percentile 75
+Running Lighthouse 5 times then get from quantile 75
 
 ## Engine
 
