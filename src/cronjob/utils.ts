@@ -1,31 +1,34 @@
-// https://gist.github.com/harish2704/d0ee530e6ee75bad6fd30c98e5ad9dab#gistcomment-2339206
-export function _get (object: any, path: any, defaultVal?: any) {
-  const _path = Array.isArray(path)
-    ? path
-    : path.split('.').filter(i => i.length)
-
-  if (!_path.length) {
-    return object === undefined ? defaultVal : object
-  }
-
-  return _get(object[_path.shift()], _path, defaultVal)
-}
-
 export default function sortAsc (arr, key?): any[] {
-  if (key) return arr.sort((a, b) => parseFloat(_get(a, key, -1)) - parseFloat(_get(b, key, 0)));
-  return arr.sort((a, b) => a - b);
+	if (key) return arr.sort((a, b) => parseFloat(a[key] || -1) - parseFloat(b[key] || 0));
+	return arr.sort((a, b) => a - b);
+};
+
+const _quantile = (sorted, q) => {
+	const pos = (sorted.length - 1) * q;
+	const base = Math.floor(pos);
+	const rest = pos - base;
+	if (sorted[base + 1] !== undefined) {
+		return sorted[base] + rest * (sorted[base + 1] - sorted[base]);
+	} else {
+		return sorted[base];
+	}
 };
 
 export function quantile (arr, q, key) {
-  const sorted = sortAsc(arr, key);
-  const pos = (sorted.length - 1) * q;
-  const base = Math.floor(pos);
-  const rest = pos - base;
+	const sorted = sortAsc(arr, key);
+	const sortOnlyValue = sorted.map(i => i[key]);
+	const res = _quantile(sortOnlyValue, q);
 
-  if (_get(sorted[base + 1], key, '')) {
-    return _get(sorted[base], key) + rest * (_get(sorted[base + 1], key) - _get(sorted[base], key));
-  }
-  return _get(sorted[base], key);
+	// findNearestindex
+	let idxResult = 0;
+	for (let index = 0; index < sorted.length; index++) {
+		if (sorted[index][key] >= res) {
+			idxResult = index;
+			break;
+		}
+	}
+
+	return sorted[idxResult];
 };
 
 export const cleanStr = (str) => str.toLowerCase().trim();
