@@ -1,9 +1,6 @@
 name: Audit web perf
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '0 12 * * 3'
 
