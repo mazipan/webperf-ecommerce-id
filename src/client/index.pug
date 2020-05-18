@@ -1,0 +1,134 @@
+- var dataKeys = Object.keys(d).reverse()
+- var firstKey = dataKeys[0]
+- var columns = ['tokopedia', 'lazada', 'shopee', 'bukalapak', 'blibli', 'jd', 'belanja']
+- var device = ['mobile', 'desktop']
+- var getData = function (date, col) {
+-	  return d[date].find(function(i) {
+-		  return i.n === col
+-	  })
+- }
+
+doctype html
+html(lang="id")
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='x-ua-compatible', content='ie=edge')
+		meta(name="viewport", content="initial-scale=1, minimum-scale=1, maximum-scale=7, user-scalable=yes, width=device-width, shrink-to-fit=no")
+		link(rel="preconnect dns-prefetch" href="https://unpkg.com" crossorigin="")
+		//- link(rel='preconnect dns-prefetch', href='https://www.google-analytics.com'  crossorigin="")
+		link(rel="stylesheet", href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css")
+		title Web Perf E-Commerce ID
+
+		meta(name='description', content='Web Perf Comparison for E-Commerce in Indonesia')
+		meta(property='og:site_name', content='mazipan')
+		meta(property='og:type', content='website')
+		meta(property='og:title', content='Web Perf E-Commerce ID')
+		meta(property='og:description', content='Web Perf Comparison for E-Commerce in Indonesia')
+		meta(property='og:url', content='https://mazipan.github.io/webperf-ecommerce-id')
+		meta(property='og:image:width', content='1200')
+		meta(property='og:image:height', content='630')
+		meta(property='article:publisher', content='https://www.facebook.com/mazipanneh')
+
+		meta(name='twitter:card', content='summary_large_image')
+		meta(name='twitter:title', content='Web Perf E-Commerce ID')
+		meta(name='twitter:description', content='Web Perf Comparison for E-Commerce in Indonesia')
+		meta(name='twitter:url', content='https://mazipan.github.io/webperf-ecommerce-id')
+		meta(name='twitter:site', content='mazipan')
+		meta(name='theme-color', content='#212121')
+
+		// Global site tag (gtag.js) - Google Analytics
+		//- script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97096911-1")
+		//- script.
+		//- 	window.dataLayer = window.dataLayer || [];
+		//- 	function gtag(){dataLayer.push(arguments);}
+		//- 	gtag('js', new Date());
+		//- 	gtag('config', 'UA-97096911-1');
+
+		style.
+			body, html {
+				height: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				min-height: 80vh;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				background-color: #212121;
+			}
+			.hero-text {
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+			}
+			.hero-text button {
+				border: none;
+				outline: 0;
+				display: inline-block;
+				padding: 10px 25px;
+				color: black;
+				background-color: #ddd;
+				text-align: center;
+				cursor: pointer;
+			}
+			.hero-text button:hover {
+				background-color: #555;
+				color: white;
+			}
+			.capitalize {
+				text-transform: capitalize;
+			}
+
+	body
+		.hero-image
+			.hero-text
+				h1 Web Perf E-Commerce ID
+				a(href="https://github.com/mazipan/webperf-ecommerce-id", target="_blank", rel="noopener", title="Github")
+					button Github Repository
+
+		div.row.flex-center
+			table
+				thead
+					tr
+						th(rowspan=2) Date
+						each valItem in columns
+							th.capitalize.text-center(colspan=2)=valItem
+					tr
+						each valItem in columns
+							th Desktop
+							th Mobile
+				tbody
+					each val in dataKeys
+						tr
+							td=val
+							each valItem in d[val]
+								td=getData(val, valItem.n).d.r.perf
+								td=getData(val, valItem.n).m.r.perf
+
+		footer.row.flex-center.margin
+			.text-center
+				span
+				| Menemukan bug? atau ingin berkontribusi?
+				| kunjungi&nbsp;
+				a(href="https://github.com/mazipan/webperf-ecommerce-id", target="_blank", rel="noopener", title="Github") Github repository
+		footer.row.flex-center
+			.text-center
+				span Crafted with ❤️ by Irfan Maulana, © 2020
+
+		script.
+			if ('loading' in HTMLImageElement.prototype) {
+				const images = document.querySelectorAll("img.lazyload");
+				images.forEach(img => {
+					img.src = img.dataset.src;
+				});
+			} else {
+				// Dynamically import the LazySizes library
+				let script = document.createElement("script");
+				script.async = true;
+				script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
+				document.body.appendChild(script);
+			}

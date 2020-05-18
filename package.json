@@ -4,6 +4,8 @@
   "description": "Web Perf Comparison for E-Commerce in Indonesia",
   "main": "index.js",
   "scripts": {
+    "dev": "parcel src/client/index.pug --public-url http://localhost:1234 ",
+    "build": "parcel build src/client/index.pug --public-url https://mazipan.github.io/webperf-ecommerce-id",
     "lint": "eslint ./src --ext .ts -c .eslintrc.js",
     "test": "echo \"Error: no test specified\" && exit 0",
     "job:webtest": "ts-node ./src/cronjob/job.ts"
@@ -22,6 +24,7 @@
     "@octokit/rest": "16.43.1",
     "app-root-dir": "^1.0.2",
     "node-fetch": "2.6.0",
+    "parcel": "^1.12.4",
     "ts-node": "8.6.2",
     "typescript": "3.7.5"
   },
@@ -37,6 +40,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "pug": "^2.0.4",
     "ts-node-dev": "1.0.0-pre.44"
   }
 }
