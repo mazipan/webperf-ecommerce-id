@@ -70,8 +70,10 @@ jobs:
           directory: ./reports
           force: true
 
-      - name: GitHub Pages Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to foo-bar.surge.sh
+        uses: dswistowski/surge-sh-action@v1
         with:
-          personal_token: ${{ secrets.GIT_TOKEN }}
-          publish_dir: ./dist
+          domain: 'webperf-ecommerce-id.surge.sh'
+          project: './dist'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}
