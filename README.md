@@ -35,6 +35,11 @@ Using [PageSpeed Insight API](https://developers.google.com/speed/docs/insights/
 - On directory [/reports/output.json](https://github.com/mazipan/webperf-ecommerce-id/blob/master/reports/output.json)
 - On [gist file](https://gist.github.com/mazipan/feebc7a0662d2450317b0926c1fbd918)
 
+## Support me
+
+- Via [trakteer](https://trakteer.id/mazipan)
+- Direct support, [send me an email](mailto:mazipanneh@gmail.com)
+
 ---
 
 Copyright © 2020 by Irfan Maulana
