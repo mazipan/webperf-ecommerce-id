@@ -94,19 +94,27 @@ html(lang="id")
 			table
 				thead
 					tr
-						th(rowspan=2) Date
+						th Date
 						each valItem in columns
-							th.capitalize.text-center(colspan=2)=valItem
-					tr
-						each valItem in columns
-							th Desktop
-							th Mobile
+							th.capitalize.text-center=valItem
 				tbody
 					each val in dataKeys
 						tr
 							td=val
 							each valItem in d[val]
 								td=getData(val, valItem.n).d.r.perf
+		div.row.flex-center
+			table
+				thead
+					tr
+						th Date
+						each valItem in columns
+							th.capitalize.text-center=valItem
+				tbody
+					each val in dataKeys
+						tr
+							td=val
+							each valItem in d[val]
 								td=getData(val, valItem.n).m.r.perf
 
 		footer.row.flex-center.margin
