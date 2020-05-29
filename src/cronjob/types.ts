@@ -8,7 +8,9 @@ export interface EcommerceItem {
 export interface LHResponse {
 	perf: number;
 
-	fcp: number;
+	lcp?: number;
+	fcp?: number;
+	cls?: number;
 	fci: number;
   ttfb: number;
   tti: number;
