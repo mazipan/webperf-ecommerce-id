@@ -73,6 +73,9 @@ jobs:
           directory: ./reports
           force: true
 
+      - name: Build UI
+        run: yarn build
+
       - name: Deploy to foo-bar.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
