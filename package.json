@@ -4,7 +4,7 @@
   "description": "Web Perf Comparison for E-Commerce in Indonesia",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/client/index.pug --public-url http://localhost:1234 ",
+    "dev": "parcel src/client/index.pug",
     "build": "parcel build src/client/index.pug --public-url https://webperf-ecommerce-id.surge.sh/",
     "lint": "eslint ./src --ext .ts -c .eslintrc.js",
     "test": "echo \"Error: no test specified\" && exit 0",
