@@ -25,7 +25,7 @@ const Home = (): React.ReactElement => {
       <h3 className="text-gray-900 text-xl font-bold">Last update {lastDate}</h3>
 
       {lastReportSorted.map((item) => (
-        <div key={item.n} className="mt-4 p-4 bg-white shadow overflow-hidden sm:rounded-lg">
+        <div key={item.n} className="mt-4 p-4 bg-white shadow overflow-hidden rounded-lg">
           <h3 className="text-3xl font-bold capitalize">{item.n}</h3>
           <div className="flex justify-start">
             <div className="text-gray-400 my-2 mr-2">
