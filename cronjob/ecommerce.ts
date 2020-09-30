@@ -1,4 +1,4 @@
-import { EcommerceItem } from './types';
+import { EcommerceItem } from '../types';
 
 const data: EcommerceItem[] = [
   {

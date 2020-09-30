@@ -6,18 +6,21 @@ export interface EcommerceItem {
 }
 
 export interface LHResponse {
-	perf: number;
+  perf: number;
 
-	lcp?: number;
-	fcp?: number;
-	cls?: number;
-	fci: number;
-  ttfb: number;
+  fid: number;
+  lcp: number;
+  cls: number;
+
+  fcp: number;
+  fmp: number;
+  fci: number;
+  tbt: number;
   tti: number;
-	si: number;
+  si: number;
 
-	size:number;
-	req: number;
+  size: number;
+  req: number;
 
   name: string;
   device: string;
