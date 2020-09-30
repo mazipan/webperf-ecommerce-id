@@ -78,6 +78,6 @@ jobs:
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'webperf-ecommerce-id.surge.sh'
-          project: './dist'
+          project: './out'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}

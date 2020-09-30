@@ -15,10 +15,10 @@ const getColorClass = (value): string => {
 };
 
 const Home = (): React.ReactElement => {
-  const reportDates = Object.keys(reports);
-  const lastDate = reportDates[reportDates.length - 1];
-  const lastReport = reports[lastDate];
-  const lastReportSorted = lastReport.sort((a, b) => b.d.perf - a.d.perf);
+  const reportDates = Object.keys(reports) || [];
+  const lastDate = reportDates[reportDates.length - 1] || '';
+  const lastReport = reports[lastDate] || [];
+  const lastReportSorted = lastReport.length > 0 ? lastReport.sort((a, b) => b.d.perf - a.d.perf) : [];
 
   return (
     <Layout>
