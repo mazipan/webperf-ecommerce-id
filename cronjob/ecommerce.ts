@@ -37,12 +37,6 @@ const data: EcommerceItem[] = [
     urlMobile: 'https://m.jd.id/',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTf8H6_qPS6d2dqXq81J2Zzjfa3yv7UvFGJN78FxaIP3v-YyS8T',
   },
-  {
-    name: 'Blanja',
-    urlDesktop: 'https://www.blanja.com/',
-    urlMobile: 'https://m.blanja.com/',
-    logo: 'https://s2.blanja.com/static/public/prime/img/common/logo@1x.png',
-  },
 ];
 
 export default data;

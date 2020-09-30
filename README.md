@@ -14,7 +14,6 @@ Web Perf Comparison for E-Commerce in Indonesia
 | Lazada    | https://www.lazada.co.id/  | https://www.lazada.co.id/?d=mobile |
 | Blibli    | https://www.blibli.com/    | https://www.blibli.com/?d=mobile   |
 | JD        | https://www.jd.id/         | https://m.jd.id/                   |
-| Blanja    | https://www.blanja.com/    | https://m.blanja.com/              |
 
 See details in file [src/server/ecommerce.ts](https://github.com/mazipan/webperf-ecommerce-id/blob/master/src/cronjob/ecommerce.ts)
 
