@@ -9,10 +9,10 @@ Web Perf Comparison for E-Commerce in Indonesia
 | Name      | Desktop URL                | Mobile URL                         |
 | --------- | -------------------------- | ---------------------------------- |
 | Tokopedia | https://www.tokopedia.com/ | https://m.tokopedia.com/           |
-| Shopee    | https://shopee.co.id/      | https://shopee.co.id/?d=mobile     |
+| Shopee    | https://shopee.co.id/      | https://shopee.co.id/     					|
 | Bukalapak | https://www.bukalapak.com/ | https://m.bukalapak.com/           |
-| Lazada    | https://www.lazada.co.id/  | https://www.lazada.co.id/?d=mobile |
-| Blibli    | https://www.blibli.com/    | https://www.blibli.com/?d=mobile   |
+| Lazada    | https://www.lazada.co.id/  | https://www.lazada.co.id/ 					|
+| Blibli    | https://www.blibli.com/    | https://www.blibli.com/   					|
 | JD        | https://www.jd.id/         | https://m.jd.id/                   |
 
 See details in file [src/server/ecommerce.ts](https://github.com/mazipan/webperf-ecommerce-id/blob/master/src/cronjob/ecommerce.ts)

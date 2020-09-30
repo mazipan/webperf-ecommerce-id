@@ -10,7 +10,7 @@ const data: EcommerceItem[] = [
   {
     name: 'Shopee',
     urlDesktop: 'https://shopee.co.id/',
-    urlMobile: 'https://shopee.co.id/?d=mobile',
+    urlMobile: 'https://shopee.co.id/',
     logo: 'https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/ca5d12864c12916c05640b36e47ac5c9.png',
   },
   {
@@ -22,13 +22,13 @@ const data: EcommerceItem[] = [
   {
     name: 'Lazada',
     urlDesktop: 'https://www.lazada.co.id/',
-    urlMobile: 'https://www.lazada.co.id/?d=mobile',
+    urlMobile: 'https://www.lazada.co.id/',
     logo: 'https://laz-img-cdn.alicdn.com/images/ims-web/TB1Hs8GaMFY.1VjSZFnXXcFHXXa.png',
   },
   {
     name: 'Blibli',
     urlDesktop: 'https://www.blibli.com/',
-    urlMobile: 'https://www.blibli.com/?d=mobile',
+    urlMobile: 'https://www.blibli.com/',
     logo: 'https://upload.wikimedia.org/wikipedia/id/0/06/Blibli-logo.png',
   },
   {
