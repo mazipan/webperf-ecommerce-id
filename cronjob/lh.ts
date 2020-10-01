@@ -39,7 +39,7 @@ export default async (name: string, url: string, device: string): Promise<LHResp
 
       const perf = categories?.performance?.score || 0;
       const req = totalResources.requestCount || 0;
-      const size = totalResources.size || 0;
+      const size = totalResources.size || totalResources.transferSize || 0;
 
       const response: LHResponse = {
         perf,

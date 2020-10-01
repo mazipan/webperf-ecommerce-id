@@ -1,6 +1,6 @@
 import Table from 'cli-table3';
 
-import data from './ecommerce';
+import data from '../constants/ecommerce';
 import runLH from './lh';
 import { updateReport } from './report';
 import { EcommerceItem } from '../types';

@@ -3,7 +3,7 @@ export default function sortAsc(arr: any[], key: string): any[] {
   return arr.sort((a, b) => a - b);
 }
 
-const _quantile = (sorted: any[], q: number) => {
+const _quantile = (sorted: any[], q: number): any => {
   const pos = (sorted.length - 1) * q;
   const base = Math.floor(pos);
   const rest = pos - base;
@@ -14,7 +14,7 @@ const _quantile = (sorted: any[], q: number) => {
   }
 };
 
-export function quantile(arr: any[], q: number, key: string) {
+export function quantile(arr: any[], q: number, key: string): any {
   const sorted = sortAsc(arr, key);
   const sortOnlyValue = sorted.map((i) => i[key]);
   const res = _quantile(sortOnlyValue, q);
