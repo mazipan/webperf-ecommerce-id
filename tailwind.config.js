@@ -6,7 +6,7 @@ module.exports = {
   // purge: false, // purge in postcss.config.js
   purge: {
     // layers: ['utilities'],
-    content: ['./components/**/*.{js,ts,tsx}', './pages/**/*.{js,ts,tsx}'],
+    content: ['./components/**/*.{js,ts,tsx}', './pages/**/*.{js,ts,tsx}', './utils/**/*.{js,ts,tsx}'],
   },
   theme: {
     extend: {},
