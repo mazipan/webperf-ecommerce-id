@@ -71,13 +71,13 @@ jobs:
           directory: ./reports
           force: true
 
-      - name: Build Web UI
-        run: yarn export
+      # - name: Build Web UI
+      #   run: yarn export
 
-      - name: Deploy UI to surge.sh
-        uses: dswistowski/surge-sh-action@v1
-        with:
-          domain: "webperf-ecommerce-id.surge.sh"
-          project: "./out"
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+      # - name: Deploy UI to surge.sh
+      #   uses: dswistowski/surge-sh-action@v1
+      #   with:
+      #     domain: "webperf-ecommerce-id.surge.sh"
+      #     project: "./out"
+      #     login: ${{ secrets.surge_login }}
+      #     token: ${{ secrets.surge_token }}
