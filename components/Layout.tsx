@@ -5,7 +5,7 @@ import Header from './HeaderSection';
 import Footer from './FooterSection';
 import { BASE_PATH } from '../constants';
 
-const title = 'E-Commerce Web Perf';
+const title = 'Web Perf E-Commerce ID';
 const titleWithIcon = `⚡️ ${title}`;
 const desc = 'Web Perf Comparison for E-Commerce in Indonesia';
 const url = BASE_PATH;
