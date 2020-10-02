@@ -15,7 +15,7 @@ const Layout = ({ children }): React.ReactElement => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#1a202c" />
         <title key="title">{title}</title>
         <meta key="description" name="description" content={desc} />
 
