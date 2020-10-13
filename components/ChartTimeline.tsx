@@ -8,7 +8,7 @@ const ChartTimeline = ({ data }): React.ReactElement => {
       data: data.map((item) => {
         return {
           x: item.date,
-          y: item.m.perf * 100,
+          y: parseInt((item.m.perf * 100).toFixed(0), 10),
         };
       }),
     },
@@ -17,7 +17,7 @@ const ChartTimeline = ({ data }): React.ReactElement => {
       data: data.map((item) => {
         return {
           x: item.date,
-          y: item.d.perf * 100,
+          y: parseInt((item.d.perf * 100).toFixed(0), 10),
         };
       }),
     },
