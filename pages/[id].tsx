@@ -11,10 +11,10 @@ import { EcommerceItem } from '../types';
 
 const ChartTimeline = dynamic(() => import('../components/ChartTimeline'), { ssr: false });
 
-const DetailPage = ({ data, allData, ecommerce, lastUpdate }): React.ReactElement => {
+const DetailPage = ({ data, allData, logo, lastUpdate }): React.ReactElement => {
   return (
     <Layout>
-      <img className="h-10 w-auto rounded" src={ecommerce.logo} alt={data.n} />
+      <img className="h-10 w-auto rounded" src={logo} alt={data.n} />
       <h1 className="text-3xl font-bold capitalize">Web Performance Result</h1>
       <small className="text-gray-600 text-lg font-bold">Last update {lastUpdate}</small>
 
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   });
 
-  return { props: { data, ecommerce, lastUpdate: lastDate, id, allData: allData } };
+  return { props: { data, logo: ecommerce.logo, lastUpdate: lastDate, id, allData: allData } };
 };
 
 export default DetailPage;
