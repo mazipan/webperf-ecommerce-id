@@ -37,10 +37,17 @@ Using [PageSpeed Insight API](https://developers.google.com/speed/docs/insights/
 
 - On directory [/reports/output.json](https://github.com/mazipan/webperf-ecommerce-id/blob/master/reports/output.json)
 
-## Support me
+### Minimum Support
 
-- Via [trakteer](https://trakteer.id/mazipan)
-- Direct support, [send me an email](mailto:mazipanneh@gmail.com)
+- Click 🌟 button
+- Follow the Author
+
+### Consider to Support
+
+- 👉 🇮🇩 [Trakteer](https://trakteer.id/mazipan?utm_source=github)
+- 👉 🌍 [BuyMeACoffe](https://www.buymeacoffee.com/mazipan?utm_source=github)
+- 👉 🌍 [Paypal](https://www.paypal.me/mazipan?utm_source=github)
+- 👉 🌍 [Ko-Fi](https://ko-fi.com/mazipan)
 
 ---
 
