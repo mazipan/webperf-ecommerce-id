@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id: string = params ? `${params.id}` : '';
-  const ecommerce?: EcommerceItem =
+  const ecommerce: EcommerceItem | undefined =
     dataEcommerce.find((i: EcommerceItem) => i.name.toLowerCase() === id.toLowerCase());
 
   const reportDates: string[] = Object.keys(reports) || [];
