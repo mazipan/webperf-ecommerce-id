@@ -36,7 +36,7 @@ const textPercentage = (size: string) => {
   };
 };
 
-const ScoreChart = ({ score = 0, title = '', variant = 'large' }): React.ReactElement => {
+const ScoreChart = ({ score = 0, variant = 'large' }): React.ReactElement => {
   const dashArray = Math.floor(BASE_DASH_ARRAY * score);
   const scoreIndex = score * 100;
 
