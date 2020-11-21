@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id: string = params ? `${params.id}` : '';
   const ecommerce: EcommerceItem =
-    dataEcommerce.find((i: EcommerceItem) => i.name.toLowerCase() === id.toLowerCase()) || { logo: '' };
+    dataEcommerce.find((i: EcommerceItem) => i.name.toLowerCase() === id.toLowerCase());
 
   const reportDates: string[] = Object.keys(reports) || [];
   const lastDate = reportDates[reportDates.length - 1] || '';
