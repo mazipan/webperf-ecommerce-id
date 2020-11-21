@@ -10,6 +10,11 @@ const Header = (): React.ReactElement => {
             <a className="text-xl font-bold text-white">⚡ E-Commerce Web Perf</a>
           </Link>
         </div>
+        <div className="flex items-center">
+          <Link href="/about">
+            <a className="text-white">About</a>
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.lh-gauge__wrapper {
+	margin: '24px 0 12px 0';
+	position: 'relative';
+	display: 'flex';
+	align-items: 'center';
+	flex-direction: 'column';
+	text-decoration: 'none';
+	padding: '8px';
+	contain: 'content';
+	will-change: 'opacity';
+};
+
+.lh-gauge__text {
+	font-size: '20px';
+	line-height: 1;
+	color: '#000';
+	text-align: 'center';
+	margin-top: '10px';
+};
+
+.is--fast {
+	color: '#0cce6b';
+	fill: '#0cce6b';
+	stroke: '#0cce6b';
+}
+
+.is--avg {
+	color: '#ffa400';
+	fill: '#ffa400';
+	stroke: '#ffa400';
+}
+
+.is--slow {
+	color: '#ff4e42';
+	fill: '#ff4e42';
+	stroke: '#ff4e42';
+}
+
+.svg-circle {
+	opacity: 0.1;
+	stroke-width: 8;
+};
+
+.svg-circle__arc {
+	fill: 'none';
+	stroke-width: 8;
+};
+
+.stroke--slow {
+	stroke: '#ff4e42';
+};
+
+.stroke--avg {
+	stroke: '#ffa400';
+};
+
+.stroke--fast {
+	stroke: '#0cce6b';
+};

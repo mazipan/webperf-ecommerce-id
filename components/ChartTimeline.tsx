@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 
-const ChartTimeline = ({ data }): React.ReactElement => {
+const ChartTimeline = ({ data, title }): React.ReactElement => {
   const series = [
     {
       name: 'Mobile',
@@ -50,6 +50,7 @@ const ChartTimeline = ({ data }): React.ReactElement => {
 
   return (
     <div className="mt-4 p-4 bg-white shadow overflow-hidden rounded-lg">
+      <div>{title}</div>
       <Chart options={options} series={series} width="100%" />
     </div>
   );

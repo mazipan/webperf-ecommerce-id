@@ -1,4 +1,6 @@
 import Table from 'cli-table3';
+import ora from 'ora';
+import chalk from 'chalk';
 
 import data from '../constants/ecommerce';
 import runLH from './lh';
@@ -16,16 +18,25 @@ const runJob = async (name: string, url: string, device: string): Promise<any | 
   });
 
   for (let i = 0; i < NUMBER_OF_RUN; i++) {
+    const spinner = ora('Getting performance score').start();
     const response = await runLH(name, url, device);
     if (response) {
       results.push(response);
-      tableLog.push([response.perf, response.fid, response.cls, response.lcp, response.tti]);
+      tableLog.push([
+        (response.perf * 100).toFixed(0),
+        response.fid.toFixed(0),
+        response.cls.toFixed(2),
+        (response.lcp / 1000).toFixed(2),
+        (response.tti / 1000).toFixed(2),
+      ]);
+      spinner.succeed(`${i} Success get performance score`);
+    } else {
+      spinner.fail(`${i} Failed get performance score`);
     }
   }
 
-  console.log(`\nPerformance Result for ${name} - ${device}`);
+  console.log(chalk.greenBright(`\nPerformance Result for ${name} - ${device}`));
   console.log(tableLog.toString());
-  console.log(`\n`);
 
   const report = quantile(results, PERCENTILE_NUM, 'perf');
   updateReport(name, device, report);
@@ -35,10 +46,10 @@ const runJob = async (name: string, url: string, device: string): Promise<any | 
 (() => {
   let isSecretNotFound = false;
   if (process.env.PSI_API_KEY) {
-    console.log(`> Found env PSI_API_KEY`);
+    console.log(chalk.bold.red(`> Found env PSI_API_KEY`));
   } else {
     isSecretNotFound = true;
-    console.error(`> env PSI_API_KEY not found`);
+    console.error(chalk.bold.red(`> env PSI_API_KEY not found`));
   }
 
   if (!isSecretNotFound) {
