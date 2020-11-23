@@ -1,14 +1,14 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 
-const ChartTimeline = ({ data, title }): React.ReactElement => {
+const ChartTimeline = ({ data, title, dataKey }): React.ReactElement => {
   const series = [
     {
       name: 'Mobile',
       data: data.map((item) => {
         return {
           x: item.date,
-          y: parseInt((item.m.perf * 100).toFixed(0), 10),
+          y: parseInt((item.m[dataKey] * 100).toFixed(0), 10),
         };
       }),
     },
@@ -17,7 +17,7 @@ const ChartTimeline = ({ data, title }): React.ReactElement => {
       data: data.map((item) => {
         return {
           x: item.date,
-          y: parseInt((item.d.perf * 100).toFixed(0), 10),
+          y: parseInt((item.d[dataKey] * 100).toFixed(0), 10),
         };
       }),
     },
@@ -49,10 +49,10 @@ const ChartTimeline = ({ data, title }): React.ReactElement => {
   };
 
   return (
-    <div className="mt-4 p-4 bg-white shadow overflow-hidden rounded-lg">
-      <div>{title}</div>
+    <>
+      <div className="text-gray-600">{title}</div>
       <Chart options={options} series={series} width="100%" />
-    </div>
+    </>
   );
 };
 

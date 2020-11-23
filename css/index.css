@@ -1,63 +1,71 @@
+
+:root {
+  --fast: #0cce6b;
+  --avg: #ffa400;
+  --slow: #ff4e42;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .lh-gauge__wrapper {
-	margin: '24px 0 12px 0';
-	position: 'relative';
-	display: 'flex';
-	align-items: 'center';
-	flex-direction: 'column';
-	text-decoration: 'none';
-	padding: '8px';
-	contain: 'content';
-	will-change: 'opacity';
-};
+  margin: 24px 0 12px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 8px;
+  contain: content;
+  will-change: opacity;
+}
+
 
 .lh-gauge__text {
-	font-size: '20px';
-	line-height: 1;
-	color: '#000';
-	text-align: 'center';
-	margin-top: '10px';
-};
+  font-size: 20px;
+  line-height: 1;
+  color: #000;
+  text-align: center;
+  margin-top: 10px;
+}
 
 .is--fast {
-	color: '#0cce6b';
-	fill: '#0cce6b';
-	stroke: '#0cce6b';
+  color: var(--fast);
+  fill: var(--fast);
+  stroke: var(--fast);
 }
 
 .is--avg {
-	color: '#ffa400';
-	fill: '#ffa400';
-	stroke: '#ffa400';
+  color: var(--avg);
+  fill: var(--avg);
+  stroke: var(--avg);
 }
 
 .is--slow {
-	color: '#ff4e42';
-	fill: '#ff4e42';
-	stroke: '#ff4e42';
+  color: var(--slow);
+  fill: var(--slow);
+  stroke: var(--slow);
 }
 
 .svg-circle {
-	opacity: 0.1;
-	stroke-width: 8;
-};
+  opacity: 0.1;
+  stroke-width: 8;
+}
 
 .svg-circle__arc {
-	fill: 'none';
-	stroke-width: 8;
-};
+  fill: none;
+  stroke-width: 8;
+}
 
 .stroke--slow {
-	stroke: '#ff4e42';
-};
+  stroke: var(--slow);
+}
 
 .stroke--avg {
-	stroke: '#ffa400';
-};
+  stroke: var(--avg);
+}
 
 .stroke--fast {
-	stroke: '#0cce6b';
-};
+  stroke: var(--fast);
+}

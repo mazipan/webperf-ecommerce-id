@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import dynamic from 'next/dynamic';
 
 import Layout from '../components/Layout';
 import DesktopIcon from '../components/Icons/Desktop';
@@ -10,8 +9,6 @@ import CardDetail from '../components/CardDetail';
 import reports from '../reports/output';
 import dataEcommerce from '../constants/ecommerce';
 import { EcommerceItem } from '../types';
-
-const ChartTimeline = dynamic(() => import('../components/ChartTimeline'), { ssr: false });
 
 const DetailPage = ({ data, allData, logo, lastUpdate }): React.ReactElement => {
   const [showDevice, setShowDevice] = useState('desktop');
@@ -51,11 +48,7 @@ const DetailPage = ({ data, allData, logo, lastUpdate }): React.ReactElement => 
         </div>
       </div>
 
-      <CardDetail
-        data={showDevice === 'desktop' ? data.d : data.m}
-        title={showDevice === 'desktop' ? 'Desktop' : 'Mobile'}
-      />
-      <ChartTimeline data={allData} title="Performance Score" />
+      <CardDetail data={showDevice === 'desktop' ? data.d : data.m} allData={allData} />
     </Layout>
   );
 };
