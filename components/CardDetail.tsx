@@ -2,7 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 import Gauge from './Gauge';
-import { getPerfColorClass, getLCPColorClass, getFIDColorClass, getCLSColorClass } from '../utils/getColorClass';
+import { getLCPColorClass, getFIDColorClass, getCLSColorClass } from '../utils/getColorClass';
 
 const ChartTimeline = dynamic(() => import('./ChartTimeline'), { ssr: false });
 
