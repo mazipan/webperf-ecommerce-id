@@ -25,3 +25,11 @@ export interface LHResponse {
   name: string;
   device: string;
 }
+
+export interface ReportItem {
+  n: string;
+  m: LHResponse;
+  d: LHResponse;
+}
+
+export type JsonReport = Record<string, ReportItem[]>;

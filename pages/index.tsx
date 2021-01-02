@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
+import HomeData from '../components/HomeData';
+import Layout from '../components/Layout';
+import DeviceChooser from '../components/DeviceChooser';
+
+import reports from '../reports/output';
 import dataEcommerce from '../constants/ecommerce';
 import { EcommerceItem } from '../types';
 
-import HomeData from '../components/HomeData';
-import Layout from '../components/Layout';
-import reports from '../reports/output';
-
 const Home = ({ lastReport, lastUpdate }): React.ReactElement => {
+  const [showDevice, setShowDevice] = useState('desktop');
+  const [sortedReport, setSortedReport] = useState(lastReport);
+
+  const handleChangeDevice = (newDevice) => {
+    setShowDevice(newDevice);
+    const key = newDevice === 'desktop' ? 'd' : 'm';
+    const sorted = lastReport.length > 0 ? lastReport.sort((a, b) => b[key].perf - a[key].perf) : [];
+    setSortedReport(sorted);
+  };
+
   return (
     <Layout>
       <h3 className="text-gray-900 text-xl font-bold">Last update {lastUpdate}</h3>
 
-      {lastReport.map((item) => (
+      <DeviceChooser activeDevice={showDevice} onChangeDevice={handleChangeDevice} />
+
+      {sortedReport.map((item) => (
         <Link href={`/${item.n.toLowerCase()}`} key={item.n}>
           <a href={`/${item.n.toLowerCase()}`}>
             <div className="mt-4 p-4 bg-white shadow overflow-hidden rounded-lg">
               <img className="h-10 w-auto rounded" src={item.logo} alt={item.n} />
               <div className="flex justify-start">
-                <HomeData data={item} title="Desktop" keyNow="d" keyPrev="dPrev" />
-                <HomeData data={item} title="Mobile" keyNow="m" keyPrev="mPrev" />
+                {showDevice === 'desktop' ? (
+                  <HomeData data={item} title="Desktop" keyNow="d" keyPrev="dPrev" />
+                ) : (
+                  <HomeData data={item} title="Mobile" keyNow="m" keyPrev="mPrev" />
+                )}
               </div>
             </div>
           </a>

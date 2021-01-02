@@ -1,14 +1,19 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+interface ChartProps {
+  data: any[];
+  title: string;
+  dataKey: string;
+}
 
-const ChartTimeline = ({ data, title, dataKey }): React.ReactElement => {
+const ChartTimeline = ({ data, title, dataKey }: ChartProps): React.ReactElement => {
   const series = [
     {
       name: 'Mobile',
       data: data.map((item) => {
         return {
           x: item.date,
-          y: parseInt((item.m[dataKey] * 100).toFixed(0), 10),
+          y: Math.round(item.m[dataKey] * 100),
         };
       }),
     },
@@ -17,7 +22,7 @@ const ChartTimeline = ({ data, title, dataKey }): React.ReactElement => {
       data: data.map((item) => {
         return {
           x: item.date,
-          y: parseInt((item.d[dataKey] * 100).toFixed(0), 10),
+          y: Math.round(item.d[dataKey] * 100),
         };
       }),
     },

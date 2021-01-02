@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from '../components/Layout';
-import DesktopIcon from '../components/Icons/Desktop';
-import PhoneIcon from '../components/Icons/Phone';
 import CardDetail from '../components/CardDetail';
+import DeviceChooser from '../components/DeviceChooser';
 
 import reports from '../reports/output';
 import dataEcommerce from '../constants/ecommerce';
@@ -23,30 +22,7 @@ const DetailPage = ({ data, allData, logo, lastUpdate }): React.ReactElement => 
       <h1 className="text-3xl font-bold capitalize">Web Performance Result</h1>
       <small className="text-gray-600 text-lg font-bold">Last update {lastUpdate}</small>
 
-      <div className="mt-4 flex">
-        <div
-          className={`mr-2 p-4 flex bg-white shadow overflow-hidden rounded-lg ${
-            showDevice === 'desktop' ? '' : 'text-gray-600'
-          }`}
-          onClick={() => {
-            handleChangeDevice('desktop');
-          }}
-        >
-          <DesktopIcon />
-          <span className="ml-2">Desktop</span>
-        </div>
-        <div
-          className={`p-4 flex bg-white shadow overflow-hidden rounded-lg ${
-            showDevice === 'mobile' ? '' : 'text-gray-600'
-          }`}
-          onClick={() => {
-            handleChangeDevice('mobile');
-          }}
-        >
-          <PhoneIcon />
-          <span className="ml-2">Mobile</span>
-        </div>
-      </div>
+      <DeviceChooser activeDevice={showDevice} onChangeDevice={handleChangeDevice} />
 
       <CardDetail data={showDevice === 'desktop' ? data.d : data.m} allData={allData} />
     </Layout>

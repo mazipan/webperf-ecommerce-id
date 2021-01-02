@@ -38,7 +38,7 @@ const textPercentage = (size: string) => {
 
 const ScoreChart = ({ score = 0, variant = 'large' }): React.ReactElement => {
   const dashArray = Math.floor(BASE_DASH_ARRAY * score);
-  const scoreIndex = score * 100;
+  const scoreIndex = Math.round(score * 100);
 
   const getClassStrokeByScore = (scoreLocal) => {
     if (scoreLocal < 0.5) {

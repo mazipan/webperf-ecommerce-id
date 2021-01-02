@@ -12,7 +12,12 @@ const Footer = (): React.ReactElement => {
         </li>
 
         <li>
-          <a href="https://github.com/mazipan/webperf-ecommerce-id" target="_blank" rel="noopenner noreferrer" className="font-bold">
+          <a
+            href="https://github.com/mazipan/webperf-ecommerce-id"
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="font-bold"
+          >
             GitHub
           </a>
         </li>
