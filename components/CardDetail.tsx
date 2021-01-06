@@ -17,7 +17,7 @@ const CardDetail = ({ data, allData }): React.ReactElement => {
         </div>
 
         <div className="p-2 bg-white shadow overflow-hidden rounded-lg">
-          <ChartTimeline data={allData} title="Performance Score" dataKey="perf" />
+          <ChartTimeline data={allData} title="Perf Score Trends" dataKey="perf" />
         </div>
       </div>
 

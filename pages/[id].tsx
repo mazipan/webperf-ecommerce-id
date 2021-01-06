@@ -20,7 +20,7 @@ const DetailPage = ({ data, allData, logo, lastUpdate }): React.ReactElement => 
     <Layout>
       <img className="h-10 w-auto rounded" src={logo} alt={data.n} />
       <h1 className="text-3xl font-bold capitalize">Web Performance Result</h1>
-      <small className="text-gray-600 text-lg font-bold">Last update {lastUpdate}</small>
+      <small className="text-gray-600 text-lg font-bold">Last updated on {lastUpdate}</small>
 
       <DeviceChooser activeDevice={showDevice} onChangeDevice={handleChangeDevice} />
 

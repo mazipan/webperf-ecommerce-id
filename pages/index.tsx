@@ -23,7 +23,7 @@ const Home = ({ lastReport, lastUpdate }): React.ReactElement => {
 
   return (
     <Layout>
-      <h3 className="text-gray-900 text-xl font-bold">Last update {lastUpdate}</h3>
+      <h3 className="text-gray-900 text-xl font-bold">Last updated on {lastUpdate}</h3>
 
       <DeviceChooser activeDevice={showDevice} onChangeDevice={handleChangeDevice} />
 
