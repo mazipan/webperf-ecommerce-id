@@ -5,16 +5,16 @@ export default class MyDocument extends Document {
     return (
       <Html lang="id">
         <Head />
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25065548-7"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7BKLRFC53"></script>
         <script data-ad-client="ca-pub-5442972248172818" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-25065548-7');
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-C7BKLRFC53');
               `
           }}
         />
