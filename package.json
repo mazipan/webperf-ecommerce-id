@@ -28,7 +28,7 @@
 		"apexcharts": "^3.22.0",
 		"app-root-dir": "^1.0.2",
 		"cors": "^2.8.5",
-		"next": "9.5.3",
+		"next": "9.5.4",
 		"node-fetch": "2.6.1",
 		"prop-types": "^15.7.2",
 		"react": "16.13.1",
