@@ -16,8 +16,8 @@ export const writeFile = (filename: string, content: string): Promise<any> => {
 };
 
 export const writeNewReport = (content: any): void => {
-  writeFile(REPORT_JSON_FILE, JSON.stringify(content, null, 2));
-  writeFile(REPORT_TS_FILE, `export default ${JSON.stringify(content, null, 2)}`);
+  writeFile(REPORT_JSON_FILE, JSON.stringify(content));
+  writeFile(REPORT_TS_FILE, `export default ${JSON.stringify(content)}`);
 };
 
 export const readFileReport = (onSuccess): void => {
