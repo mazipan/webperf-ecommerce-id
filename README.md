@@ -12,7 +12,7 @@ https://webperf-ecommerce-id.vercel.app
 
 | Name      | Desktop URL                | Mobile URL                         |
 | --------- | -------------------------- | ---------------------------------- |
-| Tokopedia | https://www.tokopedia.com/ | https://m.tokopedia.com/           |
+| Tokopedia | https://www.tokopedia.com/ | https://www.tokopedia.com/           |
 | Shopee    | https://shopee.co.id/      | https://shopee.co.id/     					|
 | Bukalapak | https://www.bukalapak.com/ | https://m.bukalapak.com/           |
 | Lazada    | https://www.lazada.co.id/  | https://www.lazada.co.id/ 					|
