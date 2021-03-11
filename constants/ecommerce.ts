@@ -4,7 +4,7 @@ const data: EcommerceItem[] = [
   {
     name: 'Tokopedia',
     urlDesktop: 'https://www.tokopedia.com/',
-    urlMobile: 'https://m.tokopedia.com/',
+    urlMobile: 'https://www.tokopedia.com/',
     logo: 'https://ecs7.tokopedia.net/assets-tokopoints/prod/images/2018/08/logo%402x.png',
   },
   {
