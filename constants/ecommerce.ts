@@ -29,7 +29,7 @@ const data: EcommerceItem[] = [
     name: 'Blibli',
     urlDesktop: 'https://www.blibli.com/',
     urlMobile: 'https://www.blibli.com/',
-    logo: 'https://upload.wikimedia.org/wikipedia/id/0/06/Blibli-logo.png',
+    logo: 'https://alyosha.co.id/wp-content/uploads/2020/05/shop-blibli-blibli-com-logo-png-clipart.png',
   },
   {
     name: 'JD',
