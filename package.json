@@ -23,7 +23,7 @@
 	},
 	"homepage": "https://github.com/mazipan/webperf-ecommerce-id#readme",
 	"dependencies": {
-		"@octokit/rest": "18.7.1",
+		"@octokit/rest": "18.7.2",
 		"@types/prop-types": "^15.7.3",
 		"apexcharts": "^3.27.3",
 		"app-root-dir": "^1.0.2",
