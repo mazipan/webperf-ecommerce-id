@@ -71,7 +71,7 @@ jobs:
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
           directory: ./reports
-          force-with-lease: true
+          force: true
 
       # - name: Build Web UI
       #   run: yarn export
