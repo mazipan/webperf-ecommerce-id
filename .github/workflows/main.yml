@@ -67,7 +67,7 @@ jobs:
           git commit -m "👋 Generated report 🚀" --no-verify
 
       - name: Push report to master
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
           directory: ./reports
