@@ -18,7 +18,7 @@ const runJob = async (name: string, url: string, device: string): Promise<any | 
   });
 
   for (let i = 0; i < NUMBER_OF_RUN; i++) {
-    const spinner = ora('Getting performance score').start();
+    const spinner = ora(`> [${i + 1}] Getting performance score for ${name} ${device}`).start();
     const response = await runLH(name, url, device);
     if (response) {
       results.push(response);
@@ -29,9 +29,9 @@ const runJob = async (name: string, url: string, device: string): Promise<any | 
         (response.lcp / 1000).toFixed(2),
         (response.tti / 1000).toFixed(2),
       ]);
-      spinner.succeed(`${i} Success get performance score`);
+      spinner.succeed(`[${i + 1}] Success get performance score for ${name} ${device}`);
     } else {
-      spinner.fail(`${i} Failed get performance score`);
+      spinner.fail(`[${i + 1}] Failed get performance score for ${name} ${device}`);
     }
   }
 

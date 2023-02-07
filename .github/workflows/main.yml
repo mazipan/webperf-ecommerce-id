@@ -3,13 +3,14 @@ name: Cronjob - Audit Web Perf
 on:
   schedule:
     - cron: "0 3 * * 0"
+  workflow_dispatch:
 
 jobs:
   run_audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -34,6 +35,27 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Updating last update timestamp
+        run: |
+          cat > reports/LAST_UPDATED
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          echo $d > reports/LAST_UPDATED
+
+      - name: Commit LAST_UPDATED
+        run: |
+          git config --local user.email "mazipanneh@gmail.com"
+          git config --local user.name "mazipan"
+          git config --global --add safe.directory /github/workspace
+          git add -A
+          git commit -m "chore: auto update file LAST_UPDATED" --no-verify
+
+      - name: Push LAST_UPDATED to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          directory: ./reports
+          force: true
+
       - name: Run web perf job
         run: yarn run job:webtest
         env:
@@ -42,30 +64,16 @@ jobs:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
 
-      - name: Updating last update timestamp
-        run: |
-          cat > reports/LAST_UPDATED
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
-          echo $d > reports/LAST_UPDATED
-          # echo "Deleting unused files..."
-          # rm -rf src
-          # rm -rf .github
-          # rm .eslintrc.js
-          # rm .prettierrc.js
-          # rm package-lock.json
-          # rm package.json
-          # rm tsconfig.json
-          # rm yarn.lock
-
       - name: Commit files report to master
         run: |
           git config --local user.email "mazipanneh@gmail.com"
           git config --local user.name "mazipan"
+          git config --global --add safe.directory /github/workspace
           git add -A
           git commit -m "👋 Generated report 🚀" --no-verify
 
       - name: Push report to master
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
           directory: ./reports
