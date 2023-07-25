@@ -11,7 +11,17 @@ export const updateReport = (name: string, device: string, response: any): void 
       const objectData = JSON.parse(data);
       const newValue = modifyLatestData(objectData, response, name, device);
 
-      writeNewReport(newValue);
+      const currentYear = new Date().getFullYear();
+      const onlyCurrentYear = {};
+      const allDates = Object.keys(newValue);
+      for (let index = 0; index < allDates.length; index++) {
+        const theDate = allDates[index];
+        if (theDate.indexOf(`${currentYear}-`) >= 0) {
+          onlyCurrentYear[theDate] = newValue[theDate];
+        }
+      }
+
+      writeNewReport(onlyCurrentYear);
     } catch (e) {
       console.error(`> [REPORT] - failed write report`, e);
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+
 interface ChartProps {
   data: any[];
   title: string;
@@ -29,12 +30,6 @@ const ChartTimeline = ({ data, title, dataKey }: ChartProps): React.ReactElement
   ];
 
   const options = {
-    chart: {
-      type: 'line',
-      toolbar: {
-        show: false,
-      },
-    },
     xaxis: {
       type: 'datetime',
     },
@@ -45,18 +40,20 @@ const ChartTimeline = ({ data, title, dataKey }: ChartProps): React.ReactElement
     },
     stroke: {
       curve: 'smooth',
-      width: 4,
+      width: 2,
     },
     dataLabels: {
       enabled: false,
     },
-    colors: ['#4299e1', '#48bb78'],
+    colors: ['#84cc16', '#c026d3'],
   };
 
   return (
     <>
       <div className="text-gray-600">{title}</div>
-      <Chart options={options} series={series} width="100%" />
+      {/*
+// @ts-ignore */}
+      <Chart options={options} series={series} width="100%" type="line" />
     </>
   );
 };

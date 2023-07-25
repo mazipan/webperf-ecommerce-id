@@ -15,7 +15,7 @@ export default async (name: string, url: string, device: string): Promise<LHResp
       },
     });
 
-    const result = await resp.json();
+    const result: any = await resp.json();
 
     if (result) {
       const loadingExperience = result?.loadingExperience || {};

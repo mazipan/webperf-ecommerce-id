@@ -1,13 +1,17 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
-  render () {
+  render() {
     return (
       <Html lang="id">
         <Head />
         <meta name="google-site-verification" content="6MAhMl8DETJAEL6vwD4RIf4QOprJYS-Vwsz9f2LKaNk" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7BKLRFC53"></script>
-        <script data-ad-client="ca-pub-5442972248172818" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script
+          data-ad-client="ca-pub-5442972248172818"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -16,7 +20,7 @@ export default class MyDocument extends Document {
               gtag('js', new Date());
 
               gtag('config', 'G-C7BKLRFC53');
-              `
+              `,
           }}
         />
 
@@ -48,13 +52,13 @@ export default class MyDocument extends Document {
               });
               setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
             })();
-              `
+              `,
             }}
           />
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

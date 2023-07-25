@@ -1,16 +1,13 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  // purge: false, // purge in postcss.config.js
-  purge: {
-    // layers: ['utilities'],
-    content: ['./components/**/*.{js,ts,tsx}', './pages/**/*.{js,ts,tsx}', './utils/**/*.{js,ts,tsx}'],
-  },
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './utils/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [],
 };
